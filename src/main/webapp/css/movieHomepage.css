@@ -1,0 +1,398 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+@font-face {
+    font-family: "Segoe Print";
+    src: url("../fonts/segoe print.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face  {
+    font-family: 'Raleway-R';
+    src:url('../fonts/Raleway-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face  {
+    font-family: 'Raleway-B';
+    src:url('../fonts/Raleway-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    /*color: #5a5a5a;*/
+    width: 100%;
+    height: 100%;
+}
+
+#global-nav{
+    background: #ffffff;
+    height: 65px;
+    width: 100%;
+    min-width: 900px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.top-nav-info {
+    float:right;
+    margin: 20px 0 0 0;
+    line-height: 28px;
+}
+
+.top-nav-info a{
+    display: inline-block;
+    zoom: 1;
+    padding: 0 12px;
+    /*height: 50px;*/
+    color: #333333;
+}
+
+.top-nav-info a{
+    cursor:pointer;
+    text-decoration: none;
+}
+
+.top-nav-info a:hover{
+    text-decoration: underline ;
+}
+
+.top-nav-welcome{
+    padding-left: 0px;
+    padding-top: 16px;
+    line-height: 20px;
+}
+
+::-webkit-input-placeholder  {
+    color: rgb(190, 188, 188);
+    font-style: italic;
+}
+
+.nav-search {
+    width: auto;
+    position: absolute;
+    height: 45px;
+    margin-left: 32%;
+    align-content: center;
+    padding: 20px 0 15px 0;
+}
+
+.nav-search fieldset{
+    border:none;
+    padding:0;
+    margin:0;
+    position:static;
+}
+
+.nav-search .inp{
+    float: left;
+    text-align: center;
+    cursor: text;
+    background: #f3f4f5;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.nav-search .inp input{
+    background: transparent;
+    width: 400px;
+    margin: 0;
+    text-align: left;
+    height: 30px;
+    padding-left: 10px;
+    outline: none;
+    border: 0px solid rgb(178, 178, 178);
+}
+
+.nav-search .inp-btn{
+    position: absolute;
+    margin-left: 400px;
+    width: 37px;
+    height: 30px;
+    zoom: 1;
+    overflow: hidden;
+}
+
+.nav-search .inp-btn input{
+    width: 100%;
+    height: 100%;
+    padding: 0px 0 0 0;
+    border: 0px solid ;
+    overflow: hidden;
+    background: url('../graphics/movieInfo/searchBT.png') no-repeat ;
+    color: transparent;
+    cursor: pointer;
+}
+
+.nav-search .inp-btn input:hover{
+    width: 100%;
+    height: 100%;
+    padding: 0px 0 0 0;
+    border: 0px solid ;
+    overflow: hidden;
+    background: url('../graphics/movieInfo/searchBT2.png') no-repeat ;
+    color: transparent;
+    cursor: pointer;
+}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+.carousel {
+    margin-bottom: 60px;
+}
+
+.carousel-inner {
+    height: auto;  /*高度自适应*/
+    width: 100%;
+    min-width: 900px;
+    margin-top: 80px;
+}
+
+/* Declare heights because of positioning of img element */
+.item {
+    height: 100%;
+    width: 100%;
+    min-width: 900px;
+    /*margin-top: 80px;*/
+    /*background-size: auto 100%;*/
+    position: absolute;
+    width: auto;
+    height: auto;
+    background-color: #777;
+}
+
+
+/* CUSTOMIZE THE movie slider
+-------------------------------------------------- */
+.slider_movie, .slider_director, .slider_star {
+    width: 90%;
+    position: relative;
+    margin: 0 auto 10% auto;
+}
+
+.slider_director, .slider_star {
+    text-align: center;
+}
+
+/** RESET AND LAYOUT
+===================================*/
+.bx-wrapper {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    *zoom: 1;
+}
+
+.bx-wrapper img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+/** THEME
+===================================*/
+
+.bx-wrapper .bx-viewport {
+    -moz-box-shadow: 0 0 5px #ccc;
+    -webkit-box-shadow: 0 0 5px #ccc;
+    box-shadow: 0 0 5px #ccc;
+    border:  5px solid #fff;
+    left: -5px;
+    background: #fff;
+
+    /*fix other elements on the page moving (on Chrome)*/
+    -webkit-transform: translatez(0);
+    -moz-transform: translatez(0);
+    -ms-transform: translatez(0);
+    -o-transform: translatez(0);
+    transform: translatez(0);
+}
+
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+}
+
+/* LOADER */
+
+.bx-wrapper .bx-loading {
+    min-height: 50px;
+    background: url(../graphics/movieHomepage/bx_loader.gif) center center no-repeat #fff;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+}
+
+/* PAGER */
+
+.bx-wrapper .bx-pager {
+    text-align: center;
+    font-size: .85em;
+    font-family: Arial;
+    font-weight: bold;
+    color: #666;
+    padding-top: 20px;
+}
+
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+    background: #666;
+    text-indent: -9999px;
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    outline: 0;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active {
+    background: #000;
+}
+
+/* DIRECTION CONTROLS (NEXT / PREV) */
+
+.bx-wrapper .bx-prev {
+    left: 10px;
+    background: url(../graphics/movieHomepage/controls.png) no-repeat 0 -32px;
+}
+
+.bx-wrapper .bx-next {
+    right: 20px;
+    background: url(../graphics/movieHomepage/controls.png) no-repeat -43px -32px;
+}
+
+.bx-wrapper .bx-prev:hover {
+    background-position: 0 0;
+}
+
+.bx-wrapper .bx-next:hover {
+    background-position: -43px 0;
+}
+
+.bx-wrapper .bx-controls-direction a {
+    position: absolute;
+    top: 50%;
+    margin-top: -16px;
+    outline: 0;
+    width: 32px;
+    height: 32px;
+    text-indent: -9999px;
+    z-index: 100;
+}
+
+.bx-wrapper .bx-controls-direction a.disabled {
+    display: none;
+}
+
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+    text-align: left;
+    width: 80%;
+}
+
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+    right: 0;
+    width: 35px;
+}
+
+/* IMAGE CAPTIONS */
+
+.bx-wrapper .bx-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #666\9;
+    background: rgba(80, 80, 80, 0.75);
+    width: 100%;
+}
+
+.bx-wrapper .bx-caption span {
+    color: #fff;
+    font-family: Arial;
+    display: block;
+    font-size: .85em;
+    padding: 10px;
+}
+
+.title {
+    width: 100%;
+    height: 40px;
+    font-size: 30px;
+    color: #333333;
+    line-height: 60px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Raleway-B';
+}
+
+.info p {
+    height: 30px;
+    float: right;
+    margin: 0 0 0 0;
+    font-size: 1.2em;
+    font-family: 'Segoe Print';
+    color: #ff7227;
+}
+
+.more {
+    float: right;
+    position: relative;
+    margin-top: 3%;
+    margin-right: 2%;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #888888;
+    font-family: 'Raleway-R';
+    font-style: italic;
+}
+
+.more:hover{
+    text-decoration: underline;
+    color: #888888;
+    font-size: 1.2em;
+    font-family: 'Raleway-R';
+}
+
+.name {
+    cursor: pointer;
+    color: #333333;
+    font-size: 1.5em;
+    font-family: 'Raleway-R';
+}
+
+.name:hover{
+    text-decoration: none;
+    color: #00B5B5;
+    font-size: 1.5em;
+    font-family: 'Raleway-R';
+}
+
+.slider {
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    align-content: center;
+}

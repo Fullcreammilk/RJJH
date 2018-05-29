@@ -1,0 +1,50 @@
+@font-face  {
+    font-family: 'Raleway-R';
+    src:url('../fonts/Raleway-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.chart {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.chart1_description, .chart2_description, .chart3_description {
+    margin: 30px auto;
+    width: 1200px;
+    height: 70px;
+}
+
+#chart1_hint, #chart2_hint, #chart3_hint {
+    width: 1200px;
+    height: 70px;
+    font-family: 'Raleway-R';
+    font-size: 24px;
+    color: #333333;
+    line-height: 1.3;
+}
+
+.chart1, .chart2, .chart3 {
+    position: relative;
+    width: 100%;
+    height: 750px;
+    margin-bottom: 20px;
+}
+.chart1{
+    margin-top:160px;
+}
+.xhzb_wrap{
+    width: 100%;
+    /*height: 300px;*/
+    margin-bottom: 10px;
+}
+
+.my_main1, .my_main2, .my_main3 {
+    width: 1200px;
+    height: 500px;
+    margin-bottom: 50px;
+    margin: 0 auto;
+    /*float: left;*/
+}

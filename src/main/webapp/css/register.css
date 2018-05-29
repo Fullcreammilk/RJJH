@@ -1,0 +1,213 @@
+/* remove codrops styles and reset the whole thing */
+#container_demo{
+    /*float:right;*/
+    text-align: left;
+
+    height: 670px;
+    width:1200px;
+
+    margin-left:auto;
+    margin-right:auto;
+    font-family: "Trebuchet MS","Myriad Pro",Arial,sans-serif;
+}
+
+.top_left{
+    padding-left: 0%;
+    padding-top: 0.5%;
+}
+/** fonts used for the icons **/
+@font-face {
+    font-family: 'FontomasCustomRegular';
+    src: url('../fonts/fontomas-webfont.eot');
+    src: url('../fonts/fontomas-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/fontomas-webfont.woff') format('woff'),
+    url('../fonts/fontomas-webfont.ttf') format('truetype'),
+    url('../fonts/fontomas-webfont.svg#FontomasCustomRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FranchiseRegular';
+    src: url('../fonts/franchise-bold-webfont.eot');
+    src: url('../fonts/franchise-bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/franchise-bold-webfont.woff') format('woff'),
+    url('../fonts/franchise-bold-webfont.ttf') format('truetype'),
+    url('../fonts/franchise-bold-webfont.svg#FranchiseRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway-B';
+    url('../fonts/Raleway-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway-L';
+    url('../fonts/Raleway-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/** The wrapper that will contain our two forms **/
+#wrapper{
+    margin-left: 55%;
+    padding-top: 9%;
+    _height: 371px;
+    position: relative;
+    z-index: 12;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+#wrapper h1{
+    font-size: 200%;
+    color: rgb(0, 0, 0);
+    font-family: 'Raleway','Arial Narrow',Arial,sans-serif;
+    font-weight:Bold;
+    margin-left:0%;
+    margin-top:0%;
+    padding-bottom: 10%;
+}
+
+#wrapper h1 span{
+    font-family: 'Raleway';
+    font-weight: lighter;
+    color: #7dcfd0;
+
+}
+#wrapper p{
+    margin-left:35%;
+    margin-bottom:15px;
+    width:45%;
+}
+#wrapper p:first-child{
+    margin: 0px;
+    width: 45%;
+}
+
+#wrapper p.welcome{
+    font-size:150%;
+    font-family: 'Raleway';
+    color: #7dcfd0;
+    margin-bottom:5%;
+}
+
+#wrapper p.welcome span{
+    font-family: 'Raleway';
+    color: #000000;
+}
+
+#wrapper label{
+    color: rgb(64, 92, 96);
+    position: relative;
+}
+
+/**** advanced input styling ****/
+/* placeholder */
+::-webkit-input-placeholder  {
+    color: rgb(190, 188, 188);
+    font-style: italic;
+}
+
+input:-moz-placeholder, textarea:-moz-placeholder{
+    color: rgb(190, 188, 188);
+    font-style: italic;
+}
+
+input {
+    outline: none;
+}
+
+/* all the input except submit and checkbox */
+#wrapper input:not([type="checkbox"]){
+    width: 92%;
+    margin-top: 4px;
+    padding: 10px 5px 10px 32px;
+    border: 1px solid rgb(178, 178, 178);
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing : content-box;
+    box-sizing : content-box;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
+    -moz-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
+    box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+#wrapper input:not([type="checkbox"]):active,
+#wrapper input:not([type="checkbox"]):focus{
+    border: 1px solid rgba(91, 90, 90, 0.7);
+    background: rgba(238, 236, 240, 0.2);
+    -webkit-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.9) inset;
+    -moz-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.9) inset;
+    box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.9) inset;
+}
+
+/** the magic icon trick ! **/
+[data-icon]:after {
+    content: attr(data-icon);
+    font-family: 'FontomasCustomRegular';
+    color: rgb(106, 159, 171);
+    position: absolute;
+    left: 10px;
+    top: 35px;
+    width: 30px;
+}
+
+/*styling both submit buttons */
+#wrapper p.button input{
+    width: 30%;
+    cursor: pointer;
+    background: rgba(61, 157, 179, 0.45);
+    padding: 5px 5px;
+    font-family: 'BebasNeueRegular','Arial Narrow',Arial,sans-serif;
+    color: #fff;
+    font-size: 20px;
+    border: 1px solid rgb(28, 108, 122);
+    margin-bottom: 10px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 1px 6px 4px rgba(0, 0, 0, 0.07) inset,
+    0px 0px 0px 3px rgb(254, 254, 254),
+    0px 5px 3px 3px rgb(210, 210, 210);
+    -moz-box-shadow:0px 1px 6px 4px rgba(0, 0, 0, 0.07) inset,
+    0px 0px 0px 3px rgb(254, 254, 254),
+    0px 5px 3px 3px rgb(210, 210, 210);
+    box-shadow:0px 1px 6px 4px rgba(0, 0, 0, 0.07) inset,
+    0px 0px 0px 3px rgb(254, 254, 254),
+    0px 5px 3px 3px rgb(210, 210, 210);
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+#wrapper p.button input:hover{
+    background: rgba(61, 157, 179, 0.60);
+}
+#wrapper p.button input:active,
+#wrapper p.button input:focus{
+    background: rgba(61, 157, 179, 0.75);
+    position: relative;
+    top: 1px;
+    border: 1px solid rgb(12, 76, 87);
+    -webkit-box-shadow: 0px 1px 6px 4px rgba(0, 0, 0, 0.2) inset;
+    -moz-box-shadow: 0px 1px 6px 4px rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 0px 1px 6px 4px rgba(0, 0, 0, 0.2) inset;
+}
+p.register.button {
+    text-align: right;
+    margin: 5px 0;
+}
+

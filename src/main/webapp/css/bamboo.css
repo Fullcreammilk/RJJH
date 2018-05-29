@@ -1,0 +1,261 @@
+@font-face {
+    font-family: 'Segoe Print';
+    src: url("../fonts/segoe print.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face  {
+    font-family: 'Raleway-R';
+    src:url('../fonts/Raleway-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    min-width: 900px;
+}
+
+#container {
+    position: relative;
+    margin-top: 115px;
+    height: auto;
+    z-index: 2;
+    display: inline-block;
+    /*background-color: #f9f9f9*/
+}
+
+/*	Navigation
+=========================== */
+.navigation {
+    background: #232323;
+    color: #cbc4c5;
+    z-index: 10;
+    width: 100%;
+    position: fixed;
+    top: 115px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /*margin-top: 115px;*/
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 200px;
+    position: relative;
+}
+
+.navigation li {
+    font-size: 18px;
+    position: relative;
+    font-weight: 100;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+    border-top: solid 1px rgba(255, 255, 255, 0.05);
+}
+
+.navigation li:hover {
+    background: #00b5b5;
+}
+
+.navigation ul li a:hover {
+    color: #FFFFFF;
+}
+
+.navigation ul li a {
+    cursor: hand;
+    text-decoration: none;
+    text-align: center;
+    color: #cbc4c5;
+    background-color: transparent;
+    display: block;
+    padding: 4px 14px 4px 14px;
+    line-height: 40px
+}
+
+
+@media only screen and (min-width: 768px) {
+    /*	Bamboo
+    =========================== */
+    #container {
+        position: absolute;
+        left: 230px;
+        width: auto;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        height: auto;
+        margin-top: 115px;
+    }
+
+    /*	Navigation
+    =========================== */
+    .navigation {
+        max-width: 200px
+    }
+}
+
+/** 电影/明星/导演css
+===================================*/
+.movie_container, .star_container, .creator_container {
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+    width: 100%;
+    /*min-width: 1100px;*/
+}
+
+.inner {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    top: 15px;
+}
+
+.movie_wrapper, .star_wrapper, .creator_wrapper {
+    position: relative;
+    display: inline-block; /* 设置为内联元素 */
+    zoom: 1;
+    width: 210px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.movie_container img, .star_container img, .creator_container img {
+    margin: 0 auto;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+    vertical-align: middle;
+}
+
+.info {
+    width: 180px;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 5px;
+}
+
+.info p {
+    float: right;
+    height: 30px;
+    float: right;
+    margin: 0 0 0 0;
+    font-size: 1.2em;
+    font-family: 'Segoe Print';
+    color: #ff7227;
+}
+
+.name {
+    cursor: pointer;
+    text-align: left;
+    color: #333333;
+    font-size: 1.2em;
+    font-family: 'Raleway-R';
+}
+
+.name:hover{
+    text-decoration: none;
+    color: #00B5B5;
+    font-size: 1.2em;
+    font-family: 'Raleway-R';
+}
+
+.delete_add {
+    float: left;
+    position: relative;
+    /*left: 20px;*/
+    width: auto;
+    height: 40px;
+}
+
+.delete_add a {
+    /*float: left;*/
+    display: inline-block;
+    font-family: 'Raleway-R';
+    color: #666;
+    font-size: 18px;
+    position: relative;
+    margin-left: 30px;
+    cursor: hand;
+}
+
+.delete_add a:hover {
+    color: #666;
+}
+
+.none_collections {
+    color: #333333;
+    font-size: 2em;
+    margin-top: 150px;
+    margin-left: 50px;
+    line-height: 1.3;
+}
+
+.none_collections a, .none_collections a:hover {
+    color: #00B5B5;
+}
+
+
+/** 多选框css
+===================================*/
+
+label {
+    display: inline;
+}
+
+.checkbox {
+    margin-left: 45%;
+    margin-top: 0;
+    width: auto;
+}
+
+.regular-checkbox {
+    /*margin-left: 45%;*/
+    display: none;
+}
+
+.regular-checkbox + label {
+    /*margin-left: 45%;*/
+    background-color: #fafafa;
+    border: 1px solid #cacece;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+    padding: 9px;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+}
+
+.regular-checkbox + label:active, .regular-checkbox:checked + label:active {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.regular-checkbox:checked + label {
+    background-color: #e9ecee;
+    border: 1px solid #adb8c0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+    color: #99a1a7;
+}
+
+.regular-checkbox:checked + label:after {
+    content: '\2714';
+    font-size: 14px;
+    position: absolute;
+    top: 0px;
+    left: 3px;
+    color: #99a1a7;
+}
+
+
+.big-checkbox + label {
+    padding: 18px;
+}
+
+.big-checkbox:checked + label:after {
+    font-size: 28px;
+    left: 6px;
+}
