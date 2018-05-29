@@ -225,7 +225,7 @@
                          style="width: 400px;cursor:pointer;">
                     <div class="movie-info">
                         <label>Founded Time: <span>${company.founded}</span></label></br>
-                        <label>Founder: <span>${company.founder}/span></label></br>
+                        <label>Founder: <span>${company.founder} </span></label></br>
                     </div>
                     <div class="movie-info" style="max-width:1000px;margin:0 auto;">
                         <label id="intro-history">History: <span style="font-style: italic;text-decoration: underline;cursor: pointer;" onclick="moreHistory()">Click here to see more</span></label></br>

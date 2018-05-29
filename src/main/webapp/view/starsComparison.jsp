@@ -199,6 +199,10 @@
     var star2_gross = [];
 
     function compare() {
+        if(left_star==right_star){
+            alert("please choose two different stars");
+            return;
+        }
         if ((left_star.size != 0) && (right_star.size != 0)) {
             $.ajax({
                 url: '/MRAS/comparison/radar',
