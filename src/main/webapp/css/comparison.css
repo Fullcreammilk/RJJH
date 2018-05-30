@@ -41,7 +41,7 @@
 .page-left .maker_search .inp{
     background: #ecf0f1;
 
-    float: right;
+    /*float: right;*/
 }
 .maker_search .inp input{
     background: transparent;

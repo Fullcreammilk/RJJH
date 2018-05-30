@@ -120,7 +120,9 @@
                 var pic = temp_pic[i].replace("/&/","");
                 stars_pic.push(temp_pic[i]+'/&/');
                 var label_var = document.createElement("label");
-                label_var.innerHTML = name;
+                var inner = name+"  ✖️";
+                console.log(inner);
+                label_var.innerHTML = inner;
                 label_var.id = name;
                 label_var.name = pic;
                 //设置提示框

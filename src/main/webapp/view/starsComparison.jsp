@@ -604,8 +604,8 @@
                     </section>
                 </div><!-- /page-inner -->
             </div><!-- /pageleft -->
-            <a href="#" class="back back-right" title="back to intro" onclick="backCenter()">Return→</a>
-            <a href="#" class="back back-left" title="back to intro" onclick="backCenter()">←Return</a>
+            <a href="#" class="back back-right" title="back to intro" onclick="backCenter()">→</a>
+            <a href="#" class="back back-left" title="back to intro" onclick="backCenter()">←</a>
         </div><!-- /splitlayout -->
     </div><!-- /container -->
     <%--图表从这里开始画--%>
