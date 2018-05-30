@@ -120,7 +120,9 @@
                 var pic = temp_pic[i].replace("/&/","");
                 stars_pic.push(temp_pic[i]+'/&/');
                 var label_var = document.createElement("label");
-                label_var.innerHTML = name;
+                var inner = name+"  ✖️";
+                console.log(inner);
+                label_var.innerHTML = inner;
                 label_var.id = name;
                 label_var.name = pic;
                 //设置提示框
@@ -413,7 +415,7 @@
         for (; i < len; i++) {
             var all = document.getElementById('nav-creators');
             var del = all.childNodes;
-            var j = 0;
+            var j = 1;
             for (; j < del.length; j++) {
                 all.removeChild(del.item(j));
             }
@@ -436,6 +438,10 @@
      * 跳转到预测界面
      */
     function forecastMovie(){
+        if(forecast_creators==""&&forecast_stars==""&&forecast_genres==""){
+            alert("You must choose people or genres");
+            return;
+        }
         if (forecast_stars != "") {
             sessionStorage.setItem("session_s", forecast_stars);
             sessionStorage.setItem("s_p", stars_pic);

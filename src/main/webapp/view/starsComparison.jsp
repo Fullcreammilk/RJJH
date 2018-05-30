@@ -199,6 +199,10 @@
     var star2_gross = [];
 
     function compare() {
+        if(left_star==right_star){
+            alert("please choose two different stars");
+            return;
+        }
         if ((left_star.size != 0) && (right_star.size != 0)) {
             $.ajax({
                 url: '/MRAS/comparison/radar',
@@ -600,8 +604,8 @@
                     </section>
                 </div><!-- /page-inner -->
             </div><!-- /pageleft -->
-            <a href="#" class="back back-right" title="back to intro" onclick="backCenter()">Return→</a>
-            <a href="#" class="back back-left" title="back to intro" onclick="backCenter()">←Return</a>
+            <a href="#" class="back back-right" title="back to intro" onclick="backCenter()">→</a>
+            <a href="#" class="back back-left" title="back to intro" onclick="backCenter()">←</a>
         </div><!-- /splitlayout -->
     </div><!-- /container -->
     <%--图表从这里开始画--%>

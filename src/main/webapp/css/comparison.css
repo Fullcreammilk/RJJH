@@ -41,7 +41,7 @@
 .page-left .maker_search .inp{
     background: #ecf0f1;
 
-    float: right;
+    /*float: right;*/
 }
 .maker_search .inp input{
     background: transparent;
@@ -116,7 +116,7 @@
     padding: 0;
     background: #ecf0f1;
     float: left;
-    border: 1px solid #34495e;
+    /*border: 1px solid #34495e;*/
     text-align: left;
     width: 400px;
     -webkit-box-sizing: border-box;
