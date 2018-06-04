@@ -29,7 +29,7 @@
 <![endif]-->
 <script language="JavaScript">
     var nationality = "All";//国籍
-//    var genre = "All";//流派
+    //    var genre = "All";//流派
     var type = "star";//类型
     var keyword = "";
     var forecast_stars = new Array();
@@ -120,8 +120,7 @@
                 var pic = temp_pic[i].replace("/&/","");
                 stars_pic.push(temp_pic[i]+'/&/');
                 var label_var = document.createElement("label");
-                var inner = name+"  ✖️";
-                console.log(inner);
+                var inner = name+" ×";
                 label_var.innerHTML = inner;
                 label_var.id = name;
                 label_var.name = pic;
@@ -151,7 +150,8 @@
                 var pic = temp_pic[i].replace("/&/","");
                 creas_pic.push(temp_pic[i]+'/&/');
                 var label_var = document.createElement("label");
-                label_var.innerHTML = name;
+                var inner = name+" ×";
+                label_var.innerHTML = inner;
                 label_var.id = name;
                 label_var.name = pic;
                 //设置提示框
@@ -312,7 +312,8 @@
                 return;
             }
             var label_var = document.createElement("label");
-            label_var.innerHTML = name;
+            var inner = name+" ×";
+            label_var.innerHTML = inner;
             label_var.id = name;
             label_var.name = pic;
             //储存名字和图片路径
@@ -337,7 +338,8 @@
                 return;
             }
             var label_var = document.createElement("label");
-            label_var.innerHTML = name;
+            var inner = name+" ×";
+            label_var.innerHTML = inner;
             label_var.id = name;
             label_var.name = pic;
             forecast_creators.push(name);
@@ -355,6 +357,7 @@
             //设置删除
             label_var.setAttribute("onclick", "deleteMakers(this)");
             document.getElementById('nav-creators').appendChild(label_var);
+
         }
 
     }
@@ -438,10 +441,6 @@
      * 跳转到预测界面
      */
     function forecastMovie(){
-        if(forecast_creators==""&&forecast_stars==""&&forecast_genres==""){
-            alert("You must choose people or genres");
-            return;
-        }
         if (forecast_stars != "") {
             sessionStorage.setItem("session_s", forecast_stars);
             sessionStorage.setItem("s_p", stars_pic);
@@ -518,95 +517,95 @@
     <jsp:include page="/view/navigetionbar.jsp"></jsp:include>
 </div>
 <div class="all" >
-<div class="aside">
-<%--预测栏--%>
-<div class="nav-forecast" style="max-width:360px;    margin-top: 0;">
-    <label>Stars:</label>
-    <div id="nav-stars">
+    <div class="aside">
+        <%--预测栏--%>
+        <div class="nav-forecast" style="max-width:360px;    margin-top: 0;">
+            <label>Stars:</label>
+            <div id="nav-stars">
 
-    </div>
-    <label>Creators:</label>
-    <div id="nav-creators">
-    </div>
-    <hr/>
-    <label>Genres</label>
-    <div id="nav-genres" class="nav-genres">
-        <c:forEach var="genre" items="${genres}">
-            <label id="${genre}" class="label_nature">${genre}</label>
-        </c:forEach>
-    </div>
+            </div>
+            <label>Creators:</label>
+            <div id="nav-creators">
+            </div>
+            <hr/>
+            <label>Genres</label>
+            <div id="nav-genres" class="nav-genres">
+                <c:forEach var="genre" items="${genres}">
+                    <label id="${genre}" class="label_nature">${genre}</label>
+                </c:forEach>
+            </div>
 
-    <div class="nav-btn">
-        <label onclick="forecastMovie()">Forecast</label>
-        <label onclick="clearMakers() ">Clear</label>
+            <div class="nav-btn">
+                <label onclick="forecastMovie()">Forecast</label>
+                <label onclick="clearMakers() ">Clear</label>
 
+            </div>
+        </div>
     </div>
-</div>
-</div>
-<div class="search">
-<!--国籍栏-->
-<div class="nationality">
-    <c:forEach var="nationality" items="${nationalities}">
-        <label id="nat-${nationality}">${nationality}</label>
-    </c:forEach>
-</div>
-<%--流派栏--%>
-<%--<div class="genre">--%>
-    <%--<c:forEach var="genre" items="${genres}">--%>
+    <div class="search">
+        <!--国籍栏-->
+        <div class="nationality">
+            <c:forEach var="nationality" items="${nationalities}">
+                <label id="nat-${nationality}">${nationality}</label>
+            </c:forEach>
+        </div>
+        <%--流派栏--%>
+        <%--<div class="genre">--%>
+        <%--<c:forEach var="genre" items="${genres}">--%>
         <%--<label id="gen-${genre}">${genre}</label>--%>
-    <%--</c:forEach>--%>
-<%--</div>--%>
+        <%--</c:forEach>--%>
+        <%--</div>--%>
 
-<!--类型栏-->
-<div class="sortWay">
-    <div class="maker_search">
-    <fieldset style="float: right;">
-        <!--<legend>搜索：</legend>-->
+        <!--类型栏-->
+        <div class="sortWay">
+            <div class="maker_search">
+                <fieldset style="float: right;">
+                    <!--<legend>搜索：</legend>-->
 
-        <div class="inp">
-            <input id="inp-stars" name="search_text" size="22" maxlength="60" value=""
-                   placeholder="Search stars" autocomplete="off">
-        </div>
-        <div class="inp-btn">
-            <input type="button" value="Search" onclick="searchstar()">
-        </div>
+                    <div class="inp">
+                        <input id="inp-stars" name="search_text" size="22" maxlength="60" value=""
+                               placeholder="Search stars" autocomplete="off">
+                    </div>
+                    <div class="inp-btn">
+                        <input type="button" value="Search" onclick="searchstar()">
+                    </div>
 
-    </fieldset>
-</div>
-    <em class="sortWay_hint">Occupation:</em>
-    <a class="checkbox_item" id="button_star">
+                </fieldset>
+            </div>
+            <em class="sortWay_hint">Occupation:</em>
+            <a class="checkbox_item" id="button_star">
         <span class="search_checkbox">
             <i class="search_checkbox_inner" id="star" style="display: inline"></i>
         </span>
-        <em class="checkbox_inline">Star</em>
-    </a>
-    <a class="checkbox_item" id="button_creator">
+                <em class="checkbox_inline">Star</em>
+            </a>
+            <a class="checkbox_item" id="button_creator">
         <span class="search_checkbox">
             <i class="search_checkbox_inner" id="creator"></i>
         </span>
-        <em class="checkbox_inline">Creator</em>
-    </a>
-</div>
-
-<!-- 电影栏 -->
-<div class="maker_container">
-
-    <c:forEach var="maker" items="${makers}">
-        <div class="maker_wrapper" id="maker:${maker.name}">
-            <div class="maker_wrapper-img">
-                <img src="${maker.imgUrl}" alt="item" id="pic:${maker.name}">
-            </div>
-            <div class="info">
-                <input type="button" id="${maker.name}" name="${maker.imgUrl}" class="plus_bt" onclick="addmakers(this)"/>
-                <a class="name" href="/MRAS/maker/detail?makerName=${maker.name}">${maker.name}</a>
-                <canvas id="myCanvas" width="500" height="500"></canvas>
-            </div>
+                <em class="checkbox_inline">Creator</em>
+            </a>
         </div>
-    </c:forEach>
-</div>
-<!-- 分页栏 -->
-<div class="M-box"></div>
-</div>
+
+        <!-- 电影栏 -->
+        <div class="maker_container">
+
+            <c:forEach var="maker" items="${makers}">
+                <div class="maker_wrapper" id="maker:${maker.name}">
+                    <div class="maker_wrapper-img">
+                        <img src="${maker.imgUrl}" alt="item" id="pic:${maker.name}">
+                    </div>
+                    <div class="info">
+                        <input type="button" id="${maker.name}" name="${maker.imgUrl}" class="plus_bt" onclick="addmakers(this)"/>
+                        <a class="name" href="/MRAS/maker/detail?makerName=${maker.name}">${maker.name}</a>
+                        <canvas id="myCanvas" width="500" height="500"></canvas>
+                    </div>
+                </div>
+            </c:forEach>
+        </div>
+        <!-- 分页栏 -->
+        <div class="M-box"></div>
+    </div>
 </div>
 </body>
 </html>
