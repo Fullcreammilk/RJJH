@@ -30,6 +30,14 @@
         var datalist = [];
         var namelist = new Array();
         $(function () {
+            var name = sessionStorage.getItem("nav");
+            if(name!=null) {
+                var p = document.getElementById(name);
+                //console.log(name);
+                p.setAttribute("style", "color: #ffffff");
+            }
+            var searchName = sessionStorage.getItem("search");
+            $('#inp-query').val(searchName);
             $('#inp-query').keyup(function(event) {
             //    处理文本框中的键盘事件
             //    如果输入字母、退格键、删除键，则将信息发送到服务器
@@ -105,12 +113,15 @@
 
         //进行搜索
         function search() {
+            sessionStorage.setItem("search", $("#inp-query").val());
+            sessionStorage.setItem("nav","nav-cs");
             window.location.href = "/MRAS/search/movSch?keywords=" + $("#inp-query").val();
+
         }
         function chooseThis(obj) {
             var name = obj.id;
-            var p = document.getElementById(name);
-            p.setAttribute("class","active");
+            sessionStorage.setItem("nav",name);
+
         }
 
         function keyOnClick(e) {
@@ -155,7 +166,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/MRAS/home">MRAS</a>
+            <a class="navbar-brand" href="/MRAS/home" onclick="chooseThis(this)" id="nav-home">MRAS</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
