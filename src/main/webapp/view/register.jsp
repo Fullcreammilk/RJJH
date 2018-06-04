@@ -15,19 +15,18 @@
         var loginname = $("#username").val();
         var loginpwd = $("#password").val();
         var loginpwd_confirm = $("#password_confirm").val();
-
-        $.ajax({    //使用jquery下面的ajax开启网络请求
-            type: "POST",   //http请求方式为POST
-            url: '/MRAS/user/reg',  //请求接口的地址
-            data: {name: loginname, pwd: loginpwd},  //存放的数据，服务器接口字段为loginId和pwd，分别对应用户登录名和密码
-            dataType: 'json',   //当这里指定为json的时候，获取到了数据后会自动解析的，只需要 返回值.字段名称 就能使用了
-            cache: false,   //不用缓存
-            async: false,
-            success: function (data) {  //请求成功，http状态码为200。返回的数据已经打包在data中了。
-                alert(data.msg);
-            }
-        });
-    }
+            $.ajax({    //使用jquery下面的ajax开启网络请求
+                type: "POST",   //http请求方式为POST
+                url: '/MRAS/user/reg',  //请求接口的地址
+                data: {name: loginname, pwd: loginpwd},  //存放的数据，服务器接口字段为loginId和pwd，分别对应用户登录名和密码
+                dataType: 'json',   //当这里指定为json的时候，获取到了数据后会自动解析的，只需要 返回值.字段名称 就能使用了
+                cache: false,   //不用缓存
+                async: false,
+                success: function (data) {  //请求成功，http状态码为200。返回的数据已经打包在data中了。
+                    alert(data.msg);
+                }
+            });
+}
 
 </script>
 

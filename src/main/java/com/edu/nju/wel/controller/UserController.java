@@ -50,7 +50,7 @@ public class UserController {
             //密码错误
             else {
                 result.put("code", ResultCode.FAIL);
-                result.put("msg","Username or password is incorrect.");
+                result.put("msg","password is incorrect.");
             }
         }
         return result.toJSONString();
@@ -65,24 +65,35 @@ public class UserController {
     @RequestMapping(value = "/reg" ,method = RequestMethod.POST)
     @ResponseBody
     public String reg(String name,String pwd,HttpSession httpSession){
-        User user1 = userService.find(String.valueOf(name));
         JSONObject result = new JSONObject();
-        User user = new User();
-        if(user1==null){
-            user.setName(name);
-            user.setPassword(pushpassword(pwd));
-            userService.addUser(user);
-            result.put("code",ResultCode.SUCCESS);
-            result.put("msg","Welcome to IMoive, "+name+"!");
-            //设置session
-            httpSession.setAttribute("username",name);
-        }
-        //用户名重复
-        else {
+        if(name==""){
             result.put("code",ResultCode.FAIL);
-            result.put("msg","The username has existed.");
+            result.put("msg","Please fill in your username.");
+            return result.toJSONString();
+        }else if(pwd=="") {
+            result.put("code",ResultCode.FAIL);
+            result.put("msg","Please fill in your password.");
+            return result.toJSONString();
+        }else{
+            User user1 = userService.find(String.valueOf(name));
+
+            User user = new User();
+            if (user1 == null) {
+                user.setName(name);
+                user.setPassword(pushpassword(pwd));
+                userService.addUser(user);
+                result.put("code", ResultCode.SUCCESS);
+                result.put("msg", "Welcome to IMoive, " + name + "!");
+                //设置session
+                httpSession.setAttribute("username", name);
+            }
+            //用户名重复
+            else {
+                result.put("code", ResultCode.FAIL);
+                result.put("msg", "The username has existed.");
+            }
+            return result.toJSONString();
         }
-        return result.toJSONString();
     }
 
     /**
