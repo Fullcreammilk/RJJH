@@ -72,6 +72,8 @@
         $("#more").show();
 //        $(".bio").after("");
         $("#retract").hide();
+        $("html, body").animate({
+            scrollTop: $("#dale_movie_subject_top_icon").offset().top }, {duration: 500,easing: "swing"});
     }
     $(function () {
         if (${isInFavorite}) {

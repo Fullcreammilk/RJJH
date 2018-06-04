@@ -112,9 +112,17 @@
             var p = document.getElementById(name);
             p.setAttribute("class","active");
         }
+
+        function keyOnClick(e) {
+            var theEvent = window.event || e;
+            var code = theEvent.keyCode || theEvent.which;
+            if (code == 13) {  //回车键的键值为13
+                search();  //调用搜索事件
+            }
+        }
     </script>
 </head>
-<body onload="initBar()">
+<body onload="initBar()" onkeydown="keyOnClick(event)">
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div id="global-nav" class="global-nav">
         <div id="guildLabel" class="top-nav-info">
