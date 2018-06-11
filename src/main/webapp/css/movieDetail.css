@@ -3,6 +3,7 @@ body {
     width: 100%;
     font-weight: 300;
     font-family: "Microsoft YaHei UI";
+
 }
 
 a.hiddenanchor {
@@ -309,12 +310,12 @@ a.hiddenanchor {
 
 /*设置多行文本溢出*/
 .review .rev-content label {
-    overflow: auto;
+    overflow-y: scroll;
     /*text-overflow:ellipsis;*/
     position: relative;
     font-size: 14px;
     line-height: 1.4em;
-    height: 8em;
+    height: 7.5em;
 }
 
 /*.review .rev-content label::after{*/
@@ -351,6 +352,7 @@ a.hiddenanchor {
     height: auto;
     text-align: center;
     zoom: 1;
+    left: 35%;
 }
 
 .M-box:before, .M-box:after {
@@ -407,11 +409,11 @@ a.hiddenanchor {
     background: #00B5B5;
 }
 
-/*.M-box .next,.M-box .prev,.M-box1 .next,.M-box1 .prev{*/
-/*font-family: "Simsun";*/
-/*font-size: 16px;*/
-/*font-weight: bold;*/
-/*}*/
+.M-box .next,.M-box .prev,.M-box1 .next,.M-box1 .prev{
+font-family: "Simsun";
+font-size: 16px;
+font-weight: bold;
+}
 .now, .count {
     padding: 0 5px;
     color: rgb(61, 157, 179);
