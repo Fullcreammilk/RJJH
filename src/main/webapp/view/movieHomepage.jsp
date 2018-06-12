@@ -105,7 +105,8 @@
 <!-- movie slider
 ================================================== -->
 <div class="slider_movie">
-    <p class="title">Top 10 Movies</p>
+    <p class="title" style="text-align: left;font-size:40px">Top 10 Movies</p>
+    <hr style="border: 0;border-bottom: 2px solid black;">
     <div class="slider">
         <c:forEach var="movie" items="${recMov}">
             <div class="slide">
@@ -126,7 +127,8 @@
 <!-- directors & writers slider
 ================================================== -->
 <div class="slider_director">
-    <p class="title">Top 10 Creators</p>
+    <p class="title" style="text-align: left;font-size:40px">Top 10 Creators</p>
+    <hr style="border: 0;border-bottom: 2px solid black;">
     <div class="slider">
         <c:forEach var="director" items="${recCreator}">
             <div class="slide">
@@ -151,7 +153,8 @@
 <!-- Film stars slider
 ================================================== -->
 <div class="slider_star">
-    <p class="title">Top 10 Stars</p>
+    <p class="title" style="text-align: left;font-size:40px">Top 10 Stars</p>
+    <hr style="border: 0;border-bottom: 2px solid black;">
     <div class="slider">
         <c:forEach var="star" items="${recStar}">
             <div class="slide">
