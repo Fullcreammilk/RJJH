@@ -64,6 +64,7 @@
         $("#sideleft").attr("style","position:fixed");
         $("#chart").hide();
         $("#introleft").attr("style","margin-top:50%;");
+        $(".page-left").show();
     }
     function goRight() {
         $("#go_btn").hide();
@@ -71,6 +72,7 @@
         $("#sideright").attr("style","position:fixed");
         $("#chart").hide();
         $("#introright").attr("style","margin-top:50%;");
+        $(".page-right").show();
     }
     function backCenter() {
         $("#go_btn").show();
@@ -78,6 +80,8 @@
         $("#sideleft").attr("style","position:relative");
         $("#introright").attr("style","margin-top:40%;");
         $("#introleft").attr("style","margin-top:40%;");
+        $(".page-left").hide();
+        $(".page-right").hide();
 //        $("#chart").show();
     }
     /**
@@ -143,16 +147,18 @@
     }
 
     function setRightStar(obj) {
+        $.when(function () {
         document.getElementById("r-name").innerHTML = obj.id;
         document.getElementById("r-pic").src = obj.name;
         document.getElementById("r-more").innerHTML = "";
-        right_star = obj.id;
+        right_star = obj.id;}).then(backCenter());
     }
     function setLeftStar(obj) {
+        $.when(function () {
         document.getElementById("l-name").innerHTML = obj.id;
         document.getElementById("l-pic").src = obj.name;
         document.getElementById("l-more").innerHTML = "";
-        left_star = obj.id;
+        left_star = obj.id;}).then(backCenter());
     }
     function gotoStar(val) {
 //        alert(val);
@@ -604,8 +610,8 @@
                     </section>
                 </div><!-- /page-inner -->
             </div><!-- /pageleft -->
-            <a href="#" class="back back-right" title="back to intro" onclick="backCenter()">→</a>
-            <a href="#" class="back back-left" title="back to intro" onclick="backCenter()">←</a>
+            <%--<a href="#" class="back back-right" title="back to intro" onclick="backCenter()">→</a>--%>
+            <%--<a href="#" class="back back-left" title="back to intro" onclick="backCenter()">←</a>--%>
         </div><!-- /splitlayout -->
     </div><!-- /container -->
     <%--图表从这里开始画--%>
