@@ -14,9 +14,9 @@ public class ItemOfPageNum {
 
     public static final int REVIEW = 5;
 
-    public static final int FORECAST = 21;
+    public static final int FORECAST = 20;
 
-    public static final int COMPANY_MOVIE = 16;
+    public static final int COMPANY_MOVIE = 15;
 
     /**
      * 将list分页，取出对应页码中的对象
