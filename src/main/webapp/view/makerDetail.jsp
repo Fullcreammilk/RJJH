@@ -304,17 +304,18 @@
                 <div id="chart" class="chart">
                     <c:if test="${canDraw}">
                         <%--画雷达图--%>
-                        <div class="chart1" style="height: 750px">
-                            <div class="chart1_description" style="text-align: center">
-                                <p class="chart1_hint" style="color: #333333; font-size: 28px">Genre Radar Chart</p>
-                            </div>
+                        <div class="chart1" style="height: 450px;">
+                            <%--<div class="chart1_description" style="text-align: center">--%>
+                                <%--<p class="chart1_hint" style="color: #333333; font-size: 28px">Genre Radar Chart</p>--%>
+                            <%--</div>--%>
 
-                            <div class="xhzb_wrap">
+                            <div class="xhzb_wrap" style="float: left;width: 60%;" >
                                 <div id="main1" class="my_main1"></div>
                             </div>
 
-                            <div class="chart1_description">
-                                <p id="chart1_hint">This radar chart is to show you the ability of the star or the
+                            <div class="chart1_description" style="float: right;width: 30%;margin-top:60px;">
+                                <p class="chart1_hint" style="color: #333333; font-size: 28px;margin-bottom: 50px">Genre Radar Chart</p>
+                                <p id="chart1_hint" style="width: 630px">This radar chart is to show you the ability of the star or the
                                     director & writer to interpret films with different tags.</p>
                             </div>
                         </div>
@@ -331,7 +332,7 @@
                                 <div id="main2" class="my_main2"></div>
                             </div>
 
-                            <div class="chart2_description">
+                            <div class="chart2_description" >
                                 <p id="chart2_hint">This line chart is to show you the awards the star won per year.</p>
                             </div>
                         </div>
@@ -348,7 +349,7 @@
                         </div>
 
                         <div class="chart3_description">
-                            <p id="chart3_hint">This chart is to show you that the amount of movies the star starred in
+                            <p id="chart3_hint" style="width: 80%;margin: 0 auto">This chart is to show you that the amount of movies the star starred in
                                 per year, as well as the total box office of these movies.</p>
                         </div>
 
@@ -377,7 +378,15 @@
     // 如果数据能生成图表
     if (${canDraw}) {
         // 基于准备好的dom，初始化echarts图表
-        var myChart = echarts.init(document.getElementById('main1'));
+        var myChart = document.getElementById('main1');
+        var myChartContainer = function () {
+            myChart.style.width = '600px';
+            myChart.style.height = '400px';
+        };
+        myChartContainer();
+        // 基于准备好的dom，初始化echarts图表
+        var myChart = echarts.init(myChart);
+
 
         var tags = [];  // maker所擅长的不同标签的列表
         var tags_data = [];  // 各项标签的能力值
