@@ -14,6 +14,7 @@
 <script src="/js/echarts.js"></script>
 
 <script language="JavaScript">
+    var splitlayout = document.getElementById( 'splitlayout' );
     //左边的明星名字
     var left_star;
     //右边的明星名字
@@ -64,7 +65,6 @@
         $("#sideleft").attr("style","position:fixed");
         $("#chart").hide();
         $("#introleft").attr("style","margin-top:50%;");
-        $(".page-left").show();
     }
     function goRight() {
         $("#go_btn").hide();
@@ -72,18 +72,15 @@
         $("#sideright").attr("style","position:fixed");
         $("#chart").hide();
         $("#introright").attr("style","margin-top:50%;");
-        $(".page-right").show();
     }
     function backCenter() {
         $("#go_btn").show();
-        $("#sideright").attr("style","position:relative");
-        $("#sideleft").attr("style","position:relative");
-        $("#introright").attr("style","margin-top:40%;");
-        $("#introleft").attr("style","margin-top:40%;");
-        $(".page-left").hide();
-        $(".page-right").hide();
-//        $("#chart").show();
+        $("#sideright").attr("style", "position:relative");
+        $("#sideleft").attr("style", "position:relative");
+        $("#introright").attr("style", "margin-top:40%;");
+        $("#introleft").attr("style", "margin-top:40%;");
     }
+
     /**
      *  初始化明星列表
      * */
@@ -147,18 +144,18 @@
     }
 
     function setRightStar(obj) {
-        $.when(function () {
         document.getElementById("r-name").innerHTML = obj.id;
         document.getElementById("r-pic").src = obj.name;
         document.getElementById("r-more").innerHTML = "";
-        right_star = obj.id;}).then(backCenter());
+        right_star = obj.id;
+        //$(".back-right").click();
     }
     function setLeftStar(obj) {
-        $.when(function () {
         document.getElementById("l-name").innerHTML = obj.id;
         document.getElementById("l-pic").src = obj.name;
         document.getElementById("l-more").innerHTML = "";
-        left_star = obj.id;}).then(backCenter());
+        left_star = obj.id;
+        //$(".back-left").click();
     }
     function gotoStar(val) {
 //        alert(val);
@@ -610,8 +607,8 @@
                     </section>
                 </div><!-- /page-inner -->
             </div><!-- /pageleft -->
-            <%--<a href="#" class="back back-right" title="back to intro" onclick="backCenter()">→</a>--%>
-            <%--<a href="#" class="back back-left" title="back to intro" onclick="backCenter()">←</a>--%>
+            <a href="#" class="back back-right" title="back to intro" onclick="backCenter()">→</a>
+            <a href="#" class="back back-left" title="back to intro" onclick="backCenter()">←</a>
         </div><!-- /splitlayout -->
     </div><!-- /container -->
     <%--图表从这里开始画--%>

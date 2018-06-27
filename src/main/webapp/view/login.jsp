@@ -118,9 +118,9 @@
         <div id="container_demo" style="BACKGROUND: url('../graphics/login/bg2.png') no-repeat center center;">
             <a class="hiddenanchor" id="toregister"></a>
             <a class="hiddenanchor" id="tologin"></a>
-            <div class="top_left">
-                <img src="../graphics/login/logo.png">
-            </div>
+            <%--<div class="top_left">--%>
+                <%--&lt;%&ndash;<img src="../graphics/logo.png">&ndash;%&gt;--%>
+            <%--</div>--%>
             <div id="nav-welcome">
                 <h1>Discover <span>the world of movies</span></h1>
             </div>
@@ -135,7 +135,7 @@
                             <input id="username" name="username" required="required" type="text"
                                    placeholder="input your username"/>
                         </p>
-                        <p>
+                        <p >
                             <label for="password" class="youpasswd" data-icon="p"> Your password: </label>
                             <input id="password" name="password" required="required" type="password"
                                    placeholder="eg. X8df90EO"/>

@@ -1,6 +1,6 @@
 ::-webkit-input-placeholder  {
     color: rgb(190, 188, 188);
-    font-style: italic;
+    font-style: normal;
 }
 
 .maker_search {
@@ -137,7 +137,7 @@
     vertical-align: middle;
     color: #666;
     font-size: 14px;
-    font-family: 'Raleway-R';
+    /*font-family: 'Raleway-R';*/
 @src: url('../fonts/Raleway-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;

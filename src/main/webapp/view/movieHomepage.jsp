@@ -18,7 +18,7 @@
     <!--<meta name="author" content="">-->
     <link rel="icon" href="/graphics/logo.png">
 
-    <title>Movie_Home</title>
+    <title>MRAS</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">

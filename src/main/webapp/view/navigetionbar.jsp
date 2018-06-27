@@ -77,12 +77,12 @@
         });
         function initBar() {
             if (${sessionScope.username!=null}) {
-                $("#guildLabel").append('<a href="/MRAS/home" id="top_fir" class="nav-home" ref="nofollow">Home</a>')
+//                $("#guildLabel").append('<a href="/MRAS/home" id="top_fir" class="nav-home" ref="nofollow">Home</a>')
                 $("#guildLabel").append('<a href="/MRAS/favourite/all" id="top_sec" class="nav-login" ref="nofollow">${sessionScope.username}</a>')
                 $("#guildLabel").append('<a id="top_thr" class="nav-register" ref="nofollow" onclick="logOut()">Logout</a>')
             }
             else {
-                $("#guildLabel").append('<a href="/MRAS/home" id="top_fir" class="nav-home" ref="nofollow">Home</a>')
+//                $("#guildLabel").append('<a href="/MRAS/home" id="top_fir" class="nav-home" ref="nofollow">Home</a>')
                 $("#guildLabel").append('<a href="/MRAS/login" id="top_sec" class="nav-login" ref="nofollow" onclick="leave()">Login</a>')
                 $("#guildLabel").append('<a href="/MRAS/login#toregister" id="top_thr" class="nav-register" ref="nofollow" onclick="leave()">Register</a>')
             }
@@ -94,7 +94,7 @@
         }
         function logOut() {
             if(window.location.href == "http://localhost:8080/MRAS/favourite/all"){
-                window.location.href = "/MRAS/home";
+//                window.location.href = "/MRAS/home";
             }else {
                     window.location.href = window.location.href;
             }
@@ -153,6 +153,7 @@
         </div>
         <div class="top-nav-welcome">
             <img src="/graphics/movieHomepage/logo.png">
+            <span>MRAS</span>
         </div>
     </div>
 
@@ -166,7 +167,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/MRAS/home" onclick="chooseThis(this)" id="nav-home">MRAS</a>
+            <a class="navbar-brand" href="/MRAS/home" onclick="chooseThis(this)" id="nav-home">Home</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">

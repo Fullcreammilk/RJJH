@@ -562,6 +562,9 @@
             }]
         }],
     };
+    $(window).resize(function() {//这是能够让图表自适应的代码
+        myChart.resize();
+    });
 
     function handleColor(option, config) {
         if (option.series[1].data[0].value >= config.targetValue.value) {
