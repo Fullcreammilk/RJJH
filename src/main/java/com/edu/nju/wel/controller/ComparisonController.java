@@ -28,7 +28,7 @@ public class ComparisonController {
     @Resource(name = "MakerDetailService")
     MakerDetailService makerDetailService = new MakerDetailImpl();
 
-    @RequestMapping("/star")
+    @RequestMapping("/stars")
     public ModelAndView comparison(String star1, String star2) {
         ModelAndView comparison = new ModelAndView("starsComparison");
         if (star1 != null && star2 != null) {
@@ -39,6 +39,16 @@ public class ComparisonController {
         return comparison;
     }
 
+    @RequestMapping("/star")
+    public ModelAndView compare(String key,String nationality,String type,String page){
+        ModelAndView modelAndView = makerDetailService.makerSearch("starComparison",key,nationality,type,page);
+        return modelAndView;
+    }
+    @RequestMapping("/result")
+    public ModelAndView getResult(){
+        ModelAndView modelAndView = new ModelAndView("compareResult");
+        return modelAndView;
+    }
     /**
      * 两个明星对比的雷达图所需数据
      * @param star1
