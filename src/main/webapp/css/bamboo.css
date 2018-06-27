@@ -17,7 +17,20 @@ body {
     height: 100%;
     min-width: 900px;
 }
+.delete_add label{
+    background: #eee;
+    font-weight: bold;
+    margin-left: 13px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 1.1em;
+}
+.delete_add label:hover {
+    background: #00B5B5;
+    color: white;
+    cursor: pointer;
 
+}
 #container {
     position: relative;
     margin-top: 115px;

@@ -113,6 +113,17 @@
                 $("#myCreator_link").css("color", "#cbc4c5");
             }
         }
+        function add_collections() {
+            window.location.href="/MRAS/search/movSch";
+
+        }
+        function add_collectionsStar() {
+            window.location.href=" /MRAS/maker/maker?keyword=&nationality=All&type=star";
+        }
+        function add_collectionsCreator() {
+            window.location.href="/MRAS/maker/maker?keyword=&nationality=All&type=creator";
+
+        }
 
         // 删除收藏方法
         function delete_collections() {
@@ -270,10 +281,10 @@
     <div class="movie_container">
         <c:if test="${!empty movie}">
             <div class="delete_add">
-                <a class="add" href="/MRAS/search/movSch">add</a>
-                <a class="delete" onclick="delete_collections()">delete</a>
-                <a class="confirm" onclick="confirm_delete()">confirm</a>
-                <a class="cancel" onclick="cancel_delete()">cancel</a>
+                <label class= "add" onclick="add_collections()"> add</label>
+                <label class="delete" onclick="delete_collections()">delete</label>
+                <label  class="confirm" onclick="confirm_delete()">confirm</label>
+                <label class="cancel" onclick="cancel_delete()">cancel</label>
             </div>
 
             <div class="inner">
@@ -315,10 +326,11 @@
     <div class="star_container">
         <c:if test="${!empty star}">
             <div class="delete_add">
-                <a class="add" href="/MRAS/maker/maker?keyword=&nationality=All&type=star">add</a>
-                <a class="delete" onclick="delete_collections()">delete</a>
-                <a class="confirm" onclick="confirm_delete()">confirm</a>
-                <a class="cancel" onclick="cancel_delete()">cancel</a>
+                <%--<a class="add" href="/MRAS/maker/maker?keyword=&nationality=All&type=star">add</a>--%>
+                <label class= "add" onclick="add_collectionsStar()"> add</label>
+                <label class="delete" onclick="delete_collections()">delete</label>
+                <label  class="confirm" onclick="confirm_delete()">confirm</label>
+                <label class="cancel" onclick="cancel_delete()">cancel</label>
             </div>
 
             <div class="inner">
@@ -361,10 +373,11 @@
     <div class="creator_container">
         <c:if test="${!empty creator}">
             <div class="delete_add">
-                <a class="add" href="/MRAS/maker/maker?keyword=&nationality=All&type=creator">add</a>
-                <a class="delete" onclick="delete_collections()">delete</a>
-                <a class="confirm" onclick="confirm_delete()">confirm</a>
-                <a class="cancel" onclick="cancel_delete()">cancel</a>
+                <%--<a class="add" href="/MRAS/maker/maker?keyword=&nationality=All&type=creator">add</a>--%>
+                <label class= "add" onclick="add_collectionsCreator()"> add</label>
+                <label class="delete" onclick="delete_collections()">delete</label>
+                <label  class="confirm" onclick="confirm_delete()">confirm</label>
+                <label class="cancel" onclick="cancel_delete()">cancel</label>
             </div>
 
             <div class="inner">
