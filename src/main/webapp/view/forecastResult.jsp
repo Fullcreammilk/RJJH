@@ -112,7 +112,7 @@
 
     <link rel="stylesheet" href="/css/3dTurn/base.css"/>
     <link rel="stylesheet" href="/css/3dTurn/index-content.css"/>
-    <script type="text/javascript" src="/js/3dTurn/global.js"></script>
+    <%--<script type="text/javascript" src="/js/3dTurn/global.js"></script>--%>
 
 </head>
 <body onload="init()">
@@ -166,14 +166,7 @@
                                 <c:if test="${effect.title=='Worst Partner'}">
                                     <img src="/graphics/forecast/rain.png" style="position: relative;left: 105px;top: 12px;">
                                 </c:if>
-                                <label style="    text-align: center;
-    background-color: #97a8b2;
-    color: white;
-    margin: 0 auto;
-    top: 70px;
-    position: relative;
-    font-size: 20px;
-    vertical-align: middle;">${effect.msg}</label>
+
                                 <div class="flip-foot">${effect.title}</div>
                                     <%--</dl>--%>
                             </div>
@@ -182,13 +175,36 @@
                                     <%--如果数组长度为1--%>
                                 <c:if test="${fn:length(effect.names)==1}">
                                     <div class="flip-item-pic"><img src="${effect.imgUrls[0]}"></div>
-                                    <div class="flip-foot">${effect.names[0]}</div>
+                                    <label style="    text-align: center;
+    background-color: #34495e;
+    color: white;
+    margin: 0 auto;
+    top: 5px;
+    position: relative;
+    font-size: 20px;
+    vertical-align: middle;
+width:260px;
+margin-left: 12px">${effect.msg}</label>
+                                    <%--<div class="flip-foot">${effect.names[0]}</div>--%>
                                 </c:if>
+
                                 <c:if test="${fn:length(effect.names)==2}">
                                     <div class="flip-item-pic"><img src="${effect.imgUrls[0]}"><img
                                             src="${effect.imgUrls[1]}"></div>
-                                    <div class="flip-foot">${effect.names[0]} & ${effect.names[1]}</div>
+
+                                    <%--<div class="flip-foot">${effect.names[0]} & ${effect.names[1]}</div>--%>
+                                    <label style="    text-align: center;
+    background-color: #34495e;
+    color: white;
+    margin: 0 auto;
+    top: 5px;
+    position: relative;
+    font-size: 20px;
+    vertical-align: middle;
+width:260px;
+margin-left: 12px">${effect.msg}</label>
                                 </c:if>
+
                             </div>
                         </li>
                     </c:forEach>
