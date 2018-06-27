@@ -125,6 +125,7 @@
             $("#creator").css("display", "inline");
         });
 
+
         //初始化nationality底色
         nationality = GetQueryString("nationality");
         if (nationality == null) {
