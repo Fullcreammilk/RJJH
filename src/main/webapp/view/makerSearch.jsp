@@ -42,6 +42,8 @@
      * jquery初始化方法(自动会调)
      */
     $(function () {
+        document.addEventListener("error", function (e) { var elem = e.target; if (elem.tagName.toLowerCase() == "img") { elem.src = "/graphics/error.jpg"; } }, true);
+
         var datalist = [];
         var namelist = new Array();
         $(function () {
@@ -122,6 +124,7 @@
             $("#star").css("display", "none");
             $("#creator").css("display", "inline");
         });
+
 
         //初始化nationality底色
         nationality = GetQueryString("nationality");

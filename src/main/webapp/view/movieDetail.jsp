@@ -342,7 +342,7 @@
 
                                 <%--<s:hidden id="top" name="name"/>--%>
                             <!-- 分页栏 -->
-                            <div class="M-box"></div>
+                            <div class="M-box" ></div>
                         </div>
                     </c:if>
                     <!--Co. Infomation-->

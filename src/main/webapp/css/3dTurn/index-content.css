@@ -37,12 +37,12 @@
 }
 
 .regularly-contBody {
-    height: 425px;
+    height: 500px;
 }
 
 .regularly-item-list {
     width: auto;
-    height: 425px;
+    height: 500px;
 }
 
 .regularly-item-list li {
@@ -71,7 +71,7 @@
 
 .regularly-item-list li .flip-box {
     width: 304px;
-    height: 425px;
+    height: 500px;
     padding: 10px;
     position: absolute;
     left: 0;
@@ -104,8 +104,8 @@
     background: #34495e;
     color: #fff;
     font-size: 28px;
-    margin: 10px auto;
-    margin-bottom: 30px;
+    margin: 0px auto;
+    margin-top: 30px;
     font-weight: bold;
     text-align: center;
     box-shadow: 0 2px 3px #c8c8c8;
@@ -160,7 +160,7 @@
     position: absolute;
     padding: 0 10px;
     left: -10px;
-    bottom: -0px;
+    /*bottom: -0px;*/
     /* right: -10px; */
     color: #fff;
     text-align: center;
