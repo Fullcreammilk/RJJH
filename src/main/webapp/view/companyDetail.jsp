@@ -222,18 +222,19 @@
                 <a class="hiddenanchor" id="toinfo"></a>
                 <div id="info" class="animate form"style="width: 1200px;text-align: center;">
                     <img href="javascript:;" onclick="showMask()" src="${company.imageurl}"
-                         style="width: 400px;cursor:pointer;">
-                    <div class="movie-info">
+                         style="width: 400px;cursor:pointer;float: left;">
+                    <div class="movie-info" style="    max-width: 600px;    margin-left: 450px;     margin-top: 0px; min-height: 250px;    text-align: left;">
                         <label>Founded Time: <span>${company.founded}</span></label></br>
                         <label>Founder: <span>${company.founder} </span></label></br>
-                    </div>
-                    <div class="movie-info" style="max-width:1000px;margin:0 auto;">
                         <label id="intro-history">History: <span style="font-style: italic;text-decoration: underline;cursor: pointer;" onclick="moreHistory()">Click here to see more</span></label></br>
                         <label id="detail-history">History: <span> ${company.history}</span><span style="float:right;font-style: italic;text-decoration: underline;cursor: pointer;font-weight: bold;" onclick="hideHistory()">Retract</span></label>
                         <label id="intro-background">Background: <span style="font-style: italic;text-decoration: underline;cursor: pointer;" onclick="moreBackground()">Click here to see more</span></label>
                         <label id="detail-background">Background: <span> ${company.background}</span><span style="float:right;font-style: italic;text-decoration: underline;cursor: pointer; font-weight: bold;" onclick="hideBackground()">Retract</span></label>
 
                     </div>
+                    <%--<div class="movie-info" style="max-width:1000px;margin:0 auto;">--%>
+                        <%----%>
+                    <%--</div>--%>
 
                     <div class="movie-stars" style="margin-top: 50px;text-align: center;">
                         <img src="/graphics/movieInfo/moviesLine.png" style="margin-bottom: 30px;">
@@ -266,37 +267,45 @@
                 <div id="chart" class="chart">
                     <c:if test="${canDraw}">
                         <%--画雷达图--%>
-                        <div class="chart1">
-                            <div class="chart1_description" style="text-align: center">
+                        <%--<div class="chart1" style="margin-top: 0px;height: 400px;float: left;">--%>
+
+
+                            <div style="margin-top: 50px;float: left;width: 400px;">
+                                <div id="main1" class="my_main1" ></div>
                                 <p class="chart1_hint" style="color: #333333; font-size: 28px">Genre Radar Chart</p>
+                                <p style="color: black;">This radar chart is to show you the top several tags of movies the
+                                   company has produced by now.</p>
                             </div>
 
-                            <div class="xhzb_wrap">
-                                <div id="main1" class="my_main1"></div>
-                            </div>
-
-                            <div class="chart1_description">
-                                <p id="chart1_hint">This radar chart is to show you the top several tags of movies the
-                                    company has produced by now.</p>
-                            </div>
-                        </div>
+                            <%--<div class="chart1_description">--%>
+                                    <%--<p class="chart1_hint" style="color: #333333; font-size: 28px">Genre Radar Chart</p>--%>
+                                <%--<p id="chart1_hint" style="    margin-left: 600px;width: 40%;--%>
+    <%--margin-top: 150px;">This radar chart is to show you the top several tags of movies the--%>
+                                    <%--company has produced by now.</p>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
                     </c:if>
 
                     <%--画柱状图--%>
-                    <div class="chart3">
-                        <div class="chart3_description" style="text-align: center">
-                            <p class="chart3_hint" style="color: #333333; font-size: 28px">Movie Amount and Box-office</p>
-                        </div>
+                    <%--<div class="chart3"style="float: right">--%>
+                        <%--<div class="chart3_description" style="text-align: center">--%>
+                            <%--<p class="chart3_hint" style="color: #333333; font-size: 28px">Movie Amount and Box-office</p>--%>
+                        <%--</div>--%>
 
-                        <div class="xhzb_wrap">
-                            <div id="main3" class="my_main3"></div>
-                        </div>
-
-                        <div class="chart3_description">
-                            <p id="chart3_hint">This chart is to show you that the amount of movies the company produced
+                        <div  style="margin-top: 50px;float: right;width: 770px;">
+                            <div id="main3" class="my_main3" ></div>
+                            <div style="width:700px;float: right;">
+                            <p class="chart1_hint" style="color: #333333; font-size: 28px">Movie Amount and Box-office</p>
+                            <p style="color: black;">This chart is to show you that the amount of movies the company produced
                                 per year, as well as the total box office of these movies.</p>
+                            </div>
                         </div>
-                    </div>
+
+                        <%--<div class="chart3_description">--%>
+                            <%--<p id="chart3_hint" style="width: 40%;">This chart is to show you that the amount of movies the company produced--%>
+                                <%--per year, as well as the total box office of these movies.</p>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
 
                     <!--Co. Infomation-->
                     <div class="footer">
@@ -320,8 +329,14 @@
          */
         // 如果数据能生成图表
         if (${canDraw}) {
+            var myChart = document.getElementById('main1');
+            var myChartContainer = function () {
+                myChart.style.width = '400px';
+                myChart.style.height = '400px';
+            };
+            myChartContainer();
             // 基于准备好的dom，初始化echarts图表
-            var myChart = echarts.init(document.getElementById('main1'));
+            var myChart = echarts.init(myChart);
 
             var tags = [];  // maker所擅长的不同标签的列表
             var tags_data = [];  // 各项标签的能力值
@@ -360,11 +375,16 @@
                         value: tags_data,
                         name: ''
                     }]
-                }]
+                }],
+
             };
 
             // 使用指定的配置项和数据显示图表
             myChart.setOption(option);
+            $(window).resize(function() {//这是能够让图表自适应的代码
+                myChart.resize();
+
+            });
         }
     });
 
@@ -377,7 +397,15 @@
     var movie_nums = [];
 
     // 基于准备好的dom，初始化echarts图表
-    var myChart3 = echarts.init(document.getElementById('main3'));
+    var myChart3 = document.getElementById('main3');
+    var myChart3Container = function () {
+        myChart3.style.width = '770px';
+        myChart3.style.height = '400px';
+    };
+    myChart3Container();
+    // 基于准备好的dom，初始化echarts图表
+    var myChart3 = echarts.init(myChart3);
+   // var myChart3 = echarts.init(document.getElementById('main3'));
 
     <c:forEach var="boxOffice_and_movieNums" items="${gross}">
     year.push(${boxOffice_and_movieNums.attr});
@@ -471,6 +499,7 @@
 
     // 使用指定的配置项和数据显示图表
     myChart3.setOption(option3);
+
 </script>
 <!-- Bootstrap core JavaScript
   ================================================== -->
