@@ -112,7 +112,7 @@
             <div class="slide">
                 <a class="name" href="/MRAS/movie/detail?movieName=${movie.name}"
                    style="font-size: 1.2em; text-align: left">
-                    <img src="${movie.imgUrl}" style="margin: 0 auto;">
+                    <img src="${movie.imgUrl}" style="margin: 0 auto;width: 182px">
                     <div class="info" style="width: 210px; height: 50px; margin: 0 auto; padding-top: 5px">
                             ${movie.name}
                         <p style="float: right">${movie.score}</p>
@@ -186,6 +186,11 @@
             slideMargin: 10
         });
     });
+
+    $(function () {
+        document.addEventListener("error", function (e) { var elem = e.target; if (elem.tagName.toLowerCase() == "img") { elem.src = "/graphics/error.jpg"; } }, true);
+
+    })
 </script>
 
 <!-- Bootstrap core JavaScript

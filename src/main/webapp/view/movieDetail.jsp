@@ -19,6 +19,8 @@
      * jquery初始化方法
      */
     $(function () {
+        document.addEventListener("error", function (e) { var elem = e.target; if (elem.tagName.toLowerCase() == "img") { elem.src = "/graphics/error.jpg"; } }, true);
+
         if (${isInFavorite}) {
             $("#Fav").show();
             $("#notFav").hide();

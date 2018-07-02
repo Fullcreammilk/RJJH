@@ -25,6 +25,8 @@
 
 
     $(function () {
+        document.addEventListener("error", function (e) { var elem = e.target; if (elem.tagName.toLowerCase() == "img") { elem.src = "/graphics/error.jpg"; } }, true);
+
 
         //初始化已经选择好的预测方案
         if (sessionStorage.getItem("session_s") != null) {

@@ -35,6 +35,8 @@
      * jquery初始化方法
      */
     $(function(){
+        document.addEventListener("error", function (e) { var elem = e.target; if (elem.tagName.toLowerCase() == "img") { elem.src = "/graphics/error.jpg"; } }, true);
+
         $('.M-box').pagination({
             current:${presentPage},
             pageCount:${pageNum},
@@ -148,10 +150,10 @@
         <div class="movie_wrapper">
             <a class="name" href="/MRAS/movie/detail?movieName=${movie.name}" style="font-size: 1.2em">
             <c:if test="${movie.imgUrl!=null}">
-            <img src = "${movie.imgUrl}">
+            <img src = "${movie.imgUrl}" style="width: 182px">
             </c:if>
             <c:if test="${movie.imgUrl==null}">
-                <img src = "/graphics/movieInfo/nopic.png">
+                <img src = "/graphics/movieInfo/nopic.png" style="width: 182px">
             </c:if>
 
             <div class="info" style="overflow: hidden;height: 5.2em;

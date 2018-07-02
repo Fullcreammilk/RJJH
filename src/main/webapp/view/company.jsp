@@ -20,6 +20,10 @@
         function clearGenre() {
             sessionStorage.removeItem("genre");
         }
+        $(function () {
+            document.addEventListener("error", function (e) { var elem = e.target; if (elem.tagName.toLowerCase() == "img") { elem.src = "/graphics/error.jpg"; } }, true);
+
+        })
     </script>
 
     <link href="/css/company.css" rel="stylesheet">
